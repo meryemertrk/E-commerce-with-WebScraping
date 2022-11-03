@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Product</title>
+</head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="http://127.0.0.1:8000/trendyolHome">TRENDYOL KLON</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+{% for computer in computers %}
+<div class="container mt-3">
+    <div class="row">
+       <div class="col-12">
+           <div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{ computer.urunfotografilink }}" class="img-fluid rounded-start" alt="..." width="200" height="200">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ computer.urunadi }}</h5>
+          <h6 class="card-title">Ürün Puanı = {{ computer.puan }}</h6>
+            <h6 class="card-text">{{ computer.trendyolfiyati }}</h6>
+          <div class="starred-attributes">
+              <ul>
+                  <li>
+                      <span title="İşlemci Tipi">İşlemci Tipi</span><i> : </i><span title="{{ computer.islemcitipi }}" class="attribute-value">{{ computer.islemcitipi }}</span>
+                  </li>
+                  <li>
+                      <span title="Ekran Kartı">Ekran Kartı</span><i> : </i><span title="{{ computer.ekrankarti }}" class="attribute-value">{{ computer.ekrankarti }}</span>
+                  </li>
+                  <li>
+                      <span title="Ram">Ram</span><i> : </i><span title="{{ computer.ram }}" class="attribute-value">{{ computer.ram }}</span>
+                  </li>
+                  <li>
+                      <span title="Ram">Ürün Özellikleri</span><i> : </i><span title="{{ computer.urunozellikleri }}" class="attribute-value">{{ computer.urunozellikleri }}</span>
+                  </li>
+              </ul>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+       </div>
+         </div>
+     </div>
+  {% endfor %}
+  </body>
+  </html>
